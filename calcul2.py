@@ -8,7 +8,7 @@ def multiply(a,b):
     print(a*b)
 def div(a,b):
     print(a/b)
-def pow(a,b):
+def power(a,b):
     print(pow(a, b))
 def factorial(c):
     pr=1
@@ -16,7 +16,7 @@ def factorial(c):
         pr=pr*i
     print(pr)
 def rand():
-    print(random.randint(1, 100))
+    print("Случайное число ", random.randint(1, 100))
 def arc(x):
     print(math.acos(x))
 oper = input("Введите операцию ")
@@ -39,7 +39,7 @@ elif oper == '/':
 elif oper == '^':
     a = float(input("Введите первое число "))
     b = float(input("Введите второе число "))
-    pow(a,b)
+    power(a,b)
 elif oper == '!':
     c = int(input("Введите число, для которого нужно найти факториал "))
     factorial(c)
