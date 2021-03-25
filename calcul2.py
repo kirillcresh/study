@@ -1,5 +1,15 @@
 import math
 import random
+print('''Типы операций поддерживаемых калькулятором
+1.+ сумма
+2.- разность
+3.* умножение
+4./ деление
+5.^ воведение числа в степень
+6.! факториал числа
+7.rand выдает случайное число в диапозоне от 0 до 100
+8.acos ищет арккосинус числа
+''')
 def summ(a,b):
     print(a+b)
 def diff(a,b):
@@ -18,7 +28,7 @@ def factorial(c):
 def rand():
     print("Случайное число ", random.randint(1, 100))
 def arc(x):
-    print(math.acos(x))
+    print("ответ в радианах ", math.acos(x))
 oper = input("Введите операцию ")
 if oper == '+':
     a = float(input("Введите первое число "))
@@ -46,7 +56,7 @@ elif oper == '!':
 elif oper == 'rand':
     rand()
 elif oper == 'acos':
-    x = float(input("Введите число в радианах "))
+    x = float(input("Введите число от -1 до 1 "))
     arc(x)
 else:
     print("Ошибка")
