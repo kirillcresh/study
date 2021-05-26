@@ -1,0 +1,142 @@
+Index: string.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>string = input(\"Введите строку \")\r\nprint(len(string), \"символов\")\r\nprint(\"строка без последнего символа\", string[0:-1])\r\nfor i in string:\r\n    print(i)\r\nstring = input(\"Введите строку \")\r\nif \"с\" in string:\r\n    print(\"Буква 'с' есть в строке\")\r\nelse:\r\n    print(\"Буквы 'с' нет в строке\")\r\n    string = input(\"Введите строку \")\r\n    print(\"Строка до удаления:\" + string)\r\n    new_string = \"\"\r\n    for i in range(0, len(string)):\r\n        if i != 2:\r\n            new_string = new_string + string[i]\r\n    print(\"Печать строки после удаления:\" + new_string)\r\n    input()\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/string.py b/string.py
+--- a/string.py	(revision 1609d97509100c56ed51df2eb49c22ede9e18570)
++++ b/string.py	(date 1621341403579)
+@@ -8,11 +8,11 @@
+     print("Буква 'с' есть в строке")
+ else:
+     print("Буквы 'с' нет в строке")
+-    string = input("Введите строку ")
+-    print("Строка до удаления:" + string)
+-    new_string = ""
+-    for i in range(0, len(string)):
+-        if i != 2:
+-            new_string = new_string + string[i]
+-    print("Печать строки после удаления:" + new_string)
+-    input()
++string = input("Введите строку ")
++print("Строка до удаления:" + string)
++new_string = ""
++for i in range(0, len(string)):
++    if i != 2:
++        new_string = new_string + string[i]
++print("Печать строки после удаления:" + new_string)
++input()
+Index: dictionary.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/dictionary.py b/dictionary.py
+new file mode 100644
+--- /dev/null	(date 1621340871731)
++++ b/dictionary.py	(date 1621340871731)
+@@ -0,0 +1,28 @@
++string = []
++string2 = []
++print("""
++______________________________________________
++Введите в список слова, разделенные строкой.
++Чтобы выйти из списка, нажмите enter и введите !
++______________________________________________
++""")
++while (True):
++    word = input("Your word: ")
++    if (word[-1]) == '!':
++         break
++    else:
++         string.append(word)
++string_set = set(string)
++print("Your quantity: ",string_set)
++space = len(str(string).split())
++print ("Yout quantity contains",space,"words.")
++lenth = str(string)
++print("String lenth =",len(lenth)-(int(space)*4))
++print("Type in new list of",len(lenth)-(int(space)*4),"symbols and same amount of words.")
++for i in range(len(string)):
++    word2 = input("Your word "+str(i+1)+": ")
++    string2.append(word2)
++d = {}
++d = {string[i]:string2[i] for i in range(space)}
++print("Your dictionary:")
++print(d)
+\ No newline at end of file
+Index: calcul2.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/calcul2.py b/calcul2.py
+new file mode 100644
+--- /dev/null	(date 1616678292079)
++++ b/calcul2.py	(date 1616678292079)
+@@ -0,0 +1,63 @@
++import math
++import random
++def summ(a,b):
++    print(a+b)
++def diff(a,b):
++    print(a-b)
++def multiply(a,b):
++    print(a*b)
++def div(a,b):
++    print(a/b)
++def power(a,b):
++    print(pow(a, b))
++def factorial(c):
++    pr=1
++    for i in range (2,c+1):
++        pr=pr*i
++    print(pr)
++def rand():
++    print("Случайное число ", random.randint(1, 100))
++def arc(x):
++    print("ответ в радианах ", math.acos(x))
++print('''Типы операций поддерживаемых калькулятором
++1.+ сумма
++2.- разность
++3.* умножение
++4./ деление
++5.^ воведение числа в степень
++6.! факториал числа
++7.rand выдает случайное число в диапозоне от 0 до 100
++8.acos ищет арккосинус числа
++''')
++oper = input("Введите операцию ")
++if oper == '+':
++    a = float(input("Введите первое число "))
++    b = float(input("Введите второе число "))
++    summ(a,b)
++elif oper == '-':
++    a = float(input("Введите первое число "))
++    b = float(input("Введите второе число "))
++    diff(a,b)
++elif oper == '*':
++    a = float(input("Введите первое число "))
++    b = float(input("Введите второе число "))
++    multiply(a,b)
++elif oper == '/':
++    a = float(input("Введите первое число "))
++    b = float(input("Введите второе число "))
++    div(a,b)
++elif oper == '^':
++    a = float(input("Введите первое число "))
++    b = float(input("Введите второе число "))
++    power(a,b)
++elif oper == '!':
++    c = int(input("Введите число, для которого нужно найти факториал "))
++    factorial(c)
++elif oper == 'rand':
++    rand()
++elif oper == 'acos':
++    x = float(input("Введите число от -1 до 1 "))
++    arc(x)
++else:
++    print("Ошибка")
++input()
